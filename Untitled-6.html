@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>无标题文档</title>
+        <style type="text/css">
+            body {
+                margin-left: 0px;
+                margin-top: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+            }
+            
+            /*panel_tally*/
+            .panel_tally {
+                width: 170px;
+                position: fixed;
+                right: 5%;
+                bottom: 5%;
+                z-index: 9999;
+                background: #4cc159;
+                padding: 0 10px 0 15px;
+                height: 2.6em;
+                line-height: 2.6em;
+            }
+            
+            .panel_tally a {
+                color: #fff;
+                font-size: 0.9em;
+            }
+            
+            .panel_tally a i {
+                float: left;
+                width: 2em;
+                padding: 0.5em 0.3em 0 0;
+            }
+            
+            .panel_tally a i img {
+                width: 100%;
+            }
+
+            .panel_tally_opacity{
+                filter:alpha(opacity=60);
+                -moz-opacity:0.6;
+                -khtml-opacity:0.6;
+                opacity:0.6;}
+        </style>
+    </head>
+    
+    <body  onscroll="scroll()">
+        <div style="height:3500px; width:100%; background:#ccc">
+            <!------样本库浮动------>
+            <div class="panel_tally borad_10" id="borad_bg">
+                <a href="#">
+                    <i><img src="image/img_avatar.png"/></i>
+                    加入我们的样本库！
+                </a>
+            </div></div>
+        
+        <script type="text/javascript">
+
+            var topValue = 0,// 上次滚动条到顶部的距离
+                interval = null;// 定时器
+            document.onscroll = function() {
+                if(interval == null)// 未发起时，启动定时器，1秒1执行
+                    interval = setInterval("test()", 500);
+                topValue = document.documentElement.scrollTop;
+            }
+
+            function test() {
+                // 判断此刻到顶部的距离是否和1秒前的距离相等
+                if(document.documentElement.scrollTop == topValue) {
+                    document.getElementById("borad_bg").style = "width: 170px;\n" +
+                        "                position: fixed;\n" +
+                        "                right: 5%;\n" +
+                        "                bottom: 5%;\n" +
+                        "                z-index: 9999;\n" +
+                        "                background: #4cc159;\n" +
+                        "                padding: 0 10px 0 15px;\n" +
+                        "                height: 2.6em;\n" +
+                        "                line-height: 2.6em;";
+                    clearInterval(interval);
+                    interval = null;
+                }
+            }
+            
+            function scroll(){
+                //console.log("打印log日志");实时看下效果
+                console.log("开始滚动！");
+            }
+
+            var scrollFunc = function (e) {
+                e = e || window.event;
+                if (e.wheelDelta) { //第一步：先判断浏览器IE，谷歌滑轮事件
+                    if (e.wheelDelta > 0) { //当滑轮向上滚动时
+                        console.log("滑轮向上滚动111");
+                        
+                    }
+                    if (e.wheelDelta < 0) { //当滑轮向下滚动时
+                        console.log("滑轮向下滚动111");
+                        document.getElementById("borad_bg").style ="filter:alpha(opacity=60); \n" +
+                            "                -moz-opacity:0.6; \n" +
+                            "                -khtml-opacity:0.6; \n" +
+                            "                opacity:0.6;";
+                    }
+                } else if (e.detail) { //Firefox滑轮事件
+                    if (e.detail> 0) { //当滑轮向上滚动时
+                        console.log("滑轮向上滚动111");
+                        document.getElementById("borad_bg").style = "filter:alpha(opacity=60); \n" +
+                            "                -moz-opacity:0.6; \n" +
+                            "                -khtml-opacity:0.6; \n" +
+                            "                opacity:0.6;";
+                    }
+                    if (e.detail< 0) { //当滑轮向下滚动时
+                        console.log("滑轮向下滚动111");
+                        document.getElementById("borad_bg").style ="filter:alpha(opacity=60); \n" +
+                            "                -moz-opacity:0.6; \n" +
+                            "                -khtml-opacity:0.6; \n" +
+                            "                opacity:0.6;";
+                    }
+                }
+            }
+            //给页面绑定滑轮滚动事件
+            if (document.addEventListener) {//firefox
+                document.addEventListener('DOMMouseScroll', scrollFunc, false);
+            }
+            //滚动滑轮触发scrollFunc方法 //ie 谷歌
+            window.onmousewheel = document.onmousewheel = scrollFunc;
+    
+    
+        </script>
+    </body>
+</html>

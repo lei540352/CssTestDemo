@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>div显示</title>
+        <style>
+            body{
+                background: #555555;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            #mySidenav a{
+                position: absolute;
+                left: -80px;
+                transition: 0.3s;
+                padding: 15px;
+                width: 100px;
+                text-decoration: none;
+                font-size: 20px;
+                color: white;
+                border-radius: 0 5px 5px 0;
+            }
+            
+            #mySidenav a:hover{
+                left: 0;
+            }
+            
+            .sidenav{
+                float: left;
+                background-color: white;
+                width: 300px;
+            }
+            .sidenav a{
+                text-decoration: none;
+            }
+            #about{
+                top: 20px;
+                background-color: #4caf50;
+            }
+            #blog{
+                top: 80px;
+                background-color: chocolate;
+            }
+
+            #projects {
+                top: 140px;
+                background-color: #f44336;
+            }
+
+            #contact {
+                top: 200px;
+                background-color: seagreen;
+            }
+            
+            
+            .content{
+                max-width: 500px;
+                margin: auto;
+                background: white;
+                padding: 10px;
+                float: none;
+            }
+            
+            .container{
+                background-color: #f2f2f2;
+                padding: 8px;
+                border-radius: 5px;
+            }
+            
+            .container:after{
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            input[type=text],select,textarea{
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                /*box-sizing: content-box|border-box|inherit:
+                 	指定宽度和高度（最小/最大属性）确定元素边框box。
+                 	也就是说，对元素指定宽度和高度包括padding和border的指定。
+                 	内容的宽度和高度减去各自双方该边框和填充的宽度从指定的"宽度"和"高度"属性计算
+                */
+                box-sizing: border-box;
+                margin-top: 6px;
+                margin-bottom: 16px;
+                resize: vertical;/*resize属性指定一个元素是否是由用户调整大小的。 vertical用户可调整元素的高度。 */
+            }
+            
+            input[type=submit]{
+                background-color: #4caf50;
+                color: white;
+                padding: 15px 30px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input[type=submit]:hover{
+                background-color: #45a049;
+            }
+            
+            .icon-bar{
+                width: 100%;
+                background-color: #333333;
+                overflow: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .icon-bar a{
+                float: left;
+                width: 20%;
+                text-align: center;
+                padding: 12px 0;
+                transition: all 0.3s ease;
+                color: white;
+            }
+            
+            .icon-bar a:hover{
+                background-color: #000;
+            }
+            
+            .active{
+                background-color: white !important;
+            }
+            
+            div.scrollmenu{
+                background-color: #333;
+                overflow: auto;
+                white-space: nowrap;
+            }
+            
+            div.scrollmenu a{
+                display: inline-block;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                padding: 15px;
+            }
+            div.scrollmenu a:hover{
+                background-color: #777;
+            }
+            
+            .col{
+                float: left;
+                width: 50%;
+                margin-top: 6px;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div id="mySidenav" class="sidenav">
+                <a href="#" id="about">About</a>
+                <a href="#" id="blog">Blog</a>
+                <a href="#" id="projects">Projects</a>
+                <a href="#" id="contact">Contact</a>
+            </div>
+            <div class="content">
+                <h1>调整浏览器窗口大小查看效果。</h1>
+                <p>此页面在屏幕宽度超过 500 像素的屏幕上始终是居中的，在小于 500 像素屏幕上，文字会自动换行。</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+                <p>菜鸟教程 - 学的不仅是技术，更是梦想！！！</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="col">
+                我在左边
+            </div>
+            <div class="col">
+                <form action="#">
+                    <label>联系人</label>
+                    <input type="text" id="cname" name="cname" placeholder="请输入姓名..">
+                    <label>邮箱</label>
+                    <input type="text" id="cemail" name="cemail" placeholder="请输入邮箱..">
+                    <label>城市</label>
+                    <select id="country" name="country">
+                        <option value="australis">北京</option>
+                        <option value="canada">上海</option>
+                        <option value="usa">深圳</option>
+                    </select>
+        
+                    <label>反馈信息</label>
+                    <textarea id="subject" name="subject" placeholder="反馈内容.." style="height: 200px"></textarea>
+                    <input type="submit" value="提交">
+                </form>
+            </div>
+        </div>
+    
+        <div class="icon-bar">
+            <a class="active" href="#"><img src="image/foot_home_selected.png"></a>
+            <a href="#"><img src="image/foot_message_selected.png"></a>
+            <a href="#"><img src="image/foot_broadcast_selected.png"></a>
+            <a href="#"><img src="image/foot_friend_selected.png"></a>
+            <a href="#"><img src="image/foot_me_selected.png"></a>
+        </div>
+    
+        <div class="scrollmenu">
+            <a href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="#support">Support</a>
+            <a href="#blog">Blog</a>
+            <a href="#tools">Tools</a>
+            <a href="#base">Base</a>
+            <a href="#custom">Custom</a>
+            <a href="#more">More</a>
+            <a href="#logo">Logo</a>
+            <a href="#friends">Friends</a>
+            <a href="#partners">Partners</a>
+            <a href="#people">People</a>
+            <a href="#work">Work</a>
+        </div>
+    </body>
+</html>

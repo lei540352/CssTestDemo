@@ -1,0 +1,195 @@
+.container{
+    position: relative;
+    width: 50%;
+}
+
+/*
+.image{
+    display: block;
+    width: 100%;
+    height: auto;
+}*/
+
+/*   一般情况   transform 属性向元素应用 2D 或 3D 转换
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008cba;
+}
+
+.container:hover .overlay{
+    opacity: 1;
+}
+
+.text{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+*/
+
+/*从上到下覆盖
+.overlay{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #008cba;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.container:hover .overlay{
+    bottom: 0;
+    height: 100%;
+}
+
+.text{
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+*/
+/*从下至上
+.overlay{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #008cba;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.container:hover .overlay{
+    top: 0;
+    height: 100%;
+}
+
+.text{
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+*/
+
+/*从左至右
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    background-color: #008cba;
+    overflow: hidden;
+    width:0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.container:hover .overlay{
+    right: 0;
+    width: 100%;
+}
+
+.text{
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+*/
+/*从右至左
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    background-color: #008cba;
+    overflow: hidden;
+    width:0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.container:hover .overlay{
+    left: 0;
+    width: 100%;
+}
+
+.text{
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}*/
+
+/*淡入淡出*/
+.image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition:  .5s ease;
+    backface-visibility: hidden;
+}
+
+.middel{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.container:hover .image{
+    opacity: 0.3;
+}
+.container:hover .middel{
+    opacity: 1;
+}
+
+.text{
+    background-color: #4caf50;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+}
